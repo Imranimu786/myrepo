@@ -27,9 +27,9 @@ pipeline {
 		     sh 'aws configure set aws_secret_access_key $secret_key'
 		     sh 'aws configure set default.region us-east-1'
 		     sh 'aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 227689816422.dkr.ecr.us-east-1.amazonaws.com'
-                     sh 'sudo docker build ./ -t sample-java'
-                     sh 'sudo docker tag sample-java:latest 227689816422.dkr.ecr.us-east-1.amazonaws.com/sample-java:latest'
-                     sh 'sudo docker push 227689816422.dkr.ecr.us-east-1.amazonaws.com/sample-java:latest'
+                     sh 'docker build ./ -t sample-java'
+                     sh 'docker tag sample-java:latest 227689816422.dkr.ecr.us-east-1.amazonaws.com/sample-java:latest'
+                     sh 'docker push 227689816422.dkr.ecr.us-east-1.amazonaws.com/sample-java:latest'
   		     
              }    
                     
