@@ -18,8 +18,8 @@ pipeline {
 	    stage ('docker image build') {
 		 environment
 			{
-				aws_access_key = credentials(aws-access-key)
-				secret_key = credentials(secret-access-key)
+				aws_access_key = credentials('aws-access-key')
+				secret_key = credentials('secret-access-key')
                   }
 
              steps {
